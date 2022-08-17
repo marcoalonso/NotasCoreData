@@ -140,6 +140,9 @@
                                                         <integer key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelarButton:" destination="VCz-tC-flp" eventType="touchUpInside" id="3m3-fa-XI9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUQ-ez-wgL">
                                                 <rect key="frame" x="202" y="0.0" width="172" height="50"/>
@@ -152,6 +155,9 @@
                                                         <integer key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="guardarButton:" destination="VCz-tC-flp" eventType="touchUpInside" id="hPW-TF-12f"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

@@ -45,6 +45,24 @@ class ListaNotasViewController: UIViewController {
 }
 
 extension ListaNotasViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let accionEliminar = UIContextualAction(style: .normal, title: "borrar") { _, _, _ in
+            self.contexto.delete(self.notas[indexPath.row])
+            self.notas.remove(at: indexPath.row)
+            
+            do{
+                try self.contexto.save()
+            }catch{
+                print("Error al guardar en core data: \(error.localizedDescription)")
+            }
+            self.tablaNotas.reloadData()
+        }
+        accionEliminar.image = UIImage(systemName: "trash")
+        accionEliminar.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [accionEliminar])
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notas.count
     }
